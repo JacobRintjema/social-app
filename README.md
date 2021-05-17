@@ -1,6 +1,6 @@
 # social-app
 
-Basic social media webapp
+Basic social media webapp (In Progress)
 
 Mean Stack: NodeJS + Express + MongoDB + Angular Application
 
