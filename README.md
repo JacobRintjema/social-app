@@ -6,7 +6,7 @@ Mean Stack: NodeJS + Express + MongoDB + Angular Application
 
 Other topics of interest: Routes, Observables, Events, Authentication and Authorization, Error Handling
 
-Created based off of the Udemy Mean Stack Course by [Maximilian Schwarzmüller](https://www.udemy.com/course/angular-2-and-nodejs-the-practical-guide/)
+Created based off of the Udemy Mean Stack Course by [Maximilian Schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
 
