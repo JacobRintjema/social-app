@@ -46,8 +46,11 @@ router.post('', auth, multer({storage: storage}).single('image'), (req, res, nex
         id: data._id,
       }
     });
+  }).catch(error => {
+    res.status(500).json({
+      message: "Could not create new post"
+    })
   });
-
 });
 
 router.put('/:id', auth, multer({storage: storage}).single('image'), (req, res, next) => {
@@ -77,6 +80,10 @@ router.put('/:id', auth, multer({storage: storage}).single('image'), (req, res, 
         message: 'Not authorized to update post.'
       });
     }
+  }).catch(error => {
+    res.status(500).json({
+      message: "Could not update post"
+    })
   });
 });
 
@@ -99,6 +106,10 @@ router.get('', (req, res, next) => {
       posts: fetchedPosts,
       maxPosts: count
     });
+  }).catch(error => {
+    res.status(500).json({
+      message: "Could not fetch new posts"
+    })
   });
 });
 
@@ -111,7 +122,11 @@ router.get('/:id', (req, res, next) => {
         message: 'Post not found'
       });
     }
-  })
+  }).catch(error => {
+    res.status(500).json({
+      message: "Could not fetch new post"
+    })
+  });
 });
 
 router.delete('/:id', auth, (req, res, next) => {
@@ -128,6 +143,10 @@ router.delete('/:id', auth, (req, res, next) => {
         message: 'Not authorized to delete post.'
       });
     }
+  }).catch(error => {
+    res.status(500).json({
+      message: "Could not delete post"
+    })
   });
 
 });
