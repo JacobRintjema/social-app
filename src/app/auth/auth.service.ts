@@ -4,6 +4,9 @@ import { fakeAsync } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { AuthData } from './auth-data.model';
+import { environment } from '../../environments/environment';
+
+const BACKEND_URL = environment.apiUrl + "/user/";
 
 @Injectable({
   providedIn: "root"
@@ -38,7 +41,7 @@ export class AuthService {
   createUser(email: string, password: string) {
     const authData: AuthData = { email: email, password: password };
     return this.http
-      .post("http://localhost:3000/api/user/signup", authData)
+      .post(BACKEND_URL + "/signup", authData)
       .subscribe(() => {
         this.router.navigate(["/"]);
       }, error => {
@@ -56,7 +59,7 @@ export class AuthService {
       token: string,
       expiresIn: number,
       userId: string
-    }>('http://localhost:3000/api/user/login', authData).subscribe(res => {
+    }>(BACKEND_URL + '/login', authData).subscribe(res => {
       const token = res.token;
       this.token = token;
 
@@ -107,7 +110,6 @@ export class AuthService {
   }
 
   private setAuthTimer(duration: number) {
-    console.log("Setting timer: " + duration);
     this.tokenTimer = setTimeout(() => {
       this.logout();
     }, duration * 1000);

@@ -9,7 +9,10 @@ const userRoutes = require('./routes/user');
 
 const app = express();
 
-mongoose.connect("mongodb+srv://jacob:PvM1gSJQ7596pjMn@social-app.hmgcy.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true })
+mongoose.connect(
+  "mongodb+srv://jacob:" + process.env.MONGO_ATLAS_PW + "@social-app.hmgcy.mongodb.net/test?retryWrites=true&w=majority",
+  { useNewUrlParser: true }
+)
 .then(() => {
   console.log("Connected to database!!");
 }).catch(err => {
