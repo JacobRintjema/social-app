@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <span><a routerLink="/">MyMessages</a></span>
+  <span><a routerLink="/">MySocial</a></span>
   <span class="space"></span>
   <ul>
     <li *ngIf="authenticated">
@@ -13,6 +13,12 @@
     </li>
     <li *ngIf="authenticated">
       <button mat-button (click)="onLogout()">Logout</button>
+    </li>
+    <li *ngIf="authenticated">
+      <button mat-button [routerLink]="['/auth/user/', id]" routerLinkActive="mat-accent">
+        User Profile
+        <mat-icon>person</mat-icon>
+      </button>
     </li>
   </ul>
 </mat-toolbar>

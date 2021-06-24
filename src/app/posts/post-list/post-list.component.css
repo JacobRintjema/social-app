@@ -23,3 +23,18 @@ mat-spinner {
 mat-paginator {
   margin-top: 1rem;
 }
+
+.user-profile {
+  background-image: url('https://www.ssu.ca/wp-content/uploads/2020/08/default-profile.png');
+  background-size: cover;
+  width: flex;
+  height: flex;
+}
+
+mat-expansion-panel mat-expansion-panel-header {
+  height: 100%;
+}
+
+mat-card-header {
+  margin-top: 2%;
+}

@@ -5,8 +5,9 @@ import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { AuthData } from './auth-data.model';
 import { environment } from '../../environments/environment';
+import { User } from './user/user.model';
 
-const BACKEND_URL = environment.apiUrl + "/user/";
+const BACKEND_URL = environment.apiUrl + "/user";
 
 @Injectable({
   providedIn: "root"
@@ -17,6 +18,8 @@ export class AuthService {
   private authStatusListener = new Subject<boolean>();
   private isAuthenticated: boolean = false;
   private userId: string;
+  private user: User;
+
 
   constructor(private http: HttpClient, private router: Router) {
 
@@ -38,15 +41,21 @@ export class AuthService {
     return this.userId;
   }
 
-  createUser(email: string, password: string) {
-    const authData: AuthData = { email: email, password: password };
+  createUser(firstName: string, lastName: string, email: string, password: string) {
+    const authData: AuthData = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      password: password
+    };
+
     return this.http
       .post(BACKEND_URL + "/signup", authData)
       .subscribe(() => {
         this.router.navigate(["/"]);
       }, error => {
         this.authStatusListener.next(false);
-      });
+    });
   }
 
   login(email: string, password: string) {
@@ -141,5 +150,29 @@ export class AuthService {
       expirationDate: new Date(expirationDate),
       userId: userId
     }
+  }
+
+  getUser(id: string) {
+    return this.http.get<{
+      firstName: string;
+      lastName: string;
+      email: string;
+      password: string;
+    }>(BACKEND_URL + "/profile/" + id);
+  }
+
+  updateUser(id: string, firstName: string, lastName: string, email: string, password: string) {
+    const authData: AuthData = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      password: password
+    };
+
+    this.http.put(BACKEND_URL + "/profile/" + id, authData).subscribe(data => {
+      this.router.navigate(['/']);
+    }, error => {
+      this.authStatusListener.next(false);
+    });
   }
 }

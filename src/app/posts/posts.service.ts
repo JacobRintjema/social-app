@@ -28,7 +28,8 @@ export class PostsService {
           content: post.content,
           id: post._id,
           imagePath: post.imagePath,
-          creator: post.creator
+          creator: post.creator,
+          author: post.author
         };
       }), maxPosts: data.maxPosts };
     }))
@@ -52,6 +53,7 @@ export class PostsService {
       content: string;
       imagePath: string;
       creator: string;
+      author: string;
     }>(BACKEND_URL + id);
   }
 
@@ -80,7 +82,8 @@ export class PostsService {
         title: title,
         content: content,
         imagePath: image,
-        creator: null
+        creator: null,
+        author: null,
       };
     }
 

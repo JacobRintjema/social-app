@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>User Profile</mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <form [formGroup]="form" (submit)="onSaveUser()" *ngIf="!isLoading">
+      <mat-form-field>
+        <input matInput formControlName='firstName' type="text" name="firstName" placeholder="First Name">
+        <mat-error *ngIf="form.get('firstName').invalid">Please enter a valid first name</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput formControlName='lastName' type="text" name="lastName" placeholder="Last Name">
+        <mat-error *ngIf="form.get('lastName').invalid">Please enter a valid last name</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput formControlName='email' type="text" name="email" placeholder="E-Mail">
+        <mat-error *ngIf="form.get('email').invalid" email>Please enter a valid email</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput formControlName='password' type="text" name="password" placeholder="Password">
+        <mat-error *ngIf="form.get('password').invalid" email>Please enter a valid password</mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">Save User</button>
+    </form>
+  </mat-card-content>
+</mat-card>

@@ -7,6 +7,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatRippleModule} from '@angular/material/core';
 
 
 @NgModule({
@@ -19,6 +22,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatProgressSpinnerModule,
     MatPaginatorModule,
     MatDialogModule,
+    MatIconModule,
+    MatDividerModule,
+    MatRippleModule
   ]
 })
 export class AngularMaterialModule {

@@ -7,7 +7,8 @@ exports.createPost = (req, res, next) => {
     title: req.body.title,
     content: req.body.content,
     imagePath: url + '/images/' + req.file.filename,
-    creator: req.userData.userId
+    creator: req.userData.userId,
+    author: req.userData.firstName + " " + req.userData.lastName
   });
 
   post.save().then(data => {
@@ -37,7 +38,8 @@ exports.updatePost = (req, res, next) => {
     title: req.body.title,
     content: req.body.content,
     imagePath: imagePath,
-    creator: req.userData.userId
+    creator: req.userData.userId,
+    author: req.userData.firstName + " " + req.userData.lastName
   });
   Post.updateOne({
     _id: req.params.id,

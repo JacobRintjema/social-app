@@ -7,7 +7,10 @@ module.exports = (req, res, next) => {
 
     req.userData = {
       email: decodedToken.email,
-      userId: decodedToken.userId
+      userId: decodedToken.userId,
+      firstName: decodedToken.firstName,
+      lastName: decodedToken.lastName,
+      password: decodedToken.password
     }
 
     next();

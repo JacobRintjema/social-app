@@ -1,0 +1,30 @@
+.example-header-image {
+  background-image: url('https://www.ssu.ca/wp-content/uploads/2020/08/default-profile.png');
+  background-size: cover;
+}
+
+mat-card-title {
+  vertical-align: middle !important;
+  margin-top: 12%;
+
+}
+
+mat-card-header {
+  padding: 2%;
+}
+
+mat-card-header-text {
+  margin-top: 2% !important;
+}
+
+mat-card-content {
+  margin: 2%;
+}
+
+textarea, mat-form-field {
+  width: 100%
+}
+
+mat-spinner {
+  margin: auto;
+}
