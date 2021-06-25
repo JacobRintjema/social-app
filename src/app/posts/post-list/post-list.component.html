@@ -18,7 +18,9 @@
       <div class="post-image">
         <img [src]="post.imagePath" [alt]="post.title">
       </div>
-      <p>{{post.content}}</p>
+      <mat-card-content>
+        <h3>{{post.content}}</h3>
+      </mat-card-content>
 
       <mat-action-row *ngIf="authenticated && userId !== post.creator">
         <button mat-icon-button color="warn">

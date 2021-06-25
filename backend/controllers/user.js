@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user");
+const Post = require('../models/post');
 let storedUser;
 
 exports.createUser = (req, res, next) => {
@@ -93,9 +94,12 @@ exports.getUser = (req, res, next) => {
 };
 
 exports.updateUser = (req, res, next) => {
+  let author = req.body.firstName + " " + req.body.lastName;
 
+  // Update user account
   bcrypt.hash(req.body.password, 10).then(hash => {
     const user = new User({
+      _id: req.params.id,
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       email: req.body.email,
@@ -103,14 +107,33 @@ exports.updateUser = (req, res, next) => {
     });
 
     User.updateOne({
-      '_id': req.params.id
+      _id: req.params.id
     }, user).then(result => {
-      console.log("result", result);
 
       if (result.n > 0) {
+        // Update user post
+        Post.updateMany({
+          creator: req.params.id
+        }, { $set: { author: author } } ).then(result => {
+          if (result.n > 0) {
+            res.status(200).json({
+              message: 'Post was successfully updated.'
+            });
+          } else {
+            res.status(401).json({
+              message: 'Not authorized to update post.'
+            });
+          }
+        }).catch(error => {
+          res.status(500).json({
+            message: "Could not update post"
+          })
+        });
+        /*
         res.status(200).json({
           message: 'User was successfully updated.'
         });
+        */
       } else {
         res.status(401).json({
           message: 'Not authorized to update user.'
@@ -122,6 +145,5 @@ exports.updateUser = (req, res, next) => {
         message: "Could not update user"
       })
     });
-
   });
 };
