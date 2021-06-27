@@ -1,12 +1,12 @@
-# social-app
+# mySocial
 
-Social Media webapp with user posting, authentication, image sharing, etc. (In Progress)
+Social Media webapp with user posting, authentication, image sharing, account administration. (In Progress)
 
 Mean Stack: NodeJS + Express + MongoDB + Angular Application
 
 Other topics of interest: Routes, Observables, Events, Authentication and Authorization, Error Handling
 
-Created based off of the Udemy Mean Stack Course by [Maximilian Schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/)
+Some component created based off of the Udemy Mean Stack Course by [Maximilian Schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
 
