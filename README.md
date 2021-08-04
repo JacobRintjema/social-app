@@ -10,7 +10,7 @@ Other topics of interest: Routes, Observables, Events, Authentication and Author
 
 ![Demo](https://streamable.com/xf3xpa)
 
-[![Demo]({})]({https://streamable.com/xf3xpa} "Demo")
+[![Demo]]({https://streamable.com/xf3xpa} "Demo")
 
 Created based off of the Udemy Mean Stack Course by [Maximilian Schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/)
 
