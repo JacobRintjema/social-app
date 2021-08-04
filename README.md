@@ -8,9 +8,9 @@ Other topics of interest: Routes, Observables, Events, Authentication and Author
 
 # Demo of Application
 
-![Demo](https://streamable.com/xf3xpa)
-
 https://streamable.com/xf3xpa
+
+---
 
 Created based off of the Udemy Mean Stack Course by [Maximilian Schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/)
 
