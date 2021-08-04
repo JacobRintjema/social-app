@@ -8,7 +8,7 @@ Other topics of interest: Routes, Observables, Events, Authentication and Author
 
 # Demo of Application
 
-![Demo](https://www.dropbox.com/s/sct3kqfetdf1i6x/demo1.mov?dl=0)
+![Demo](https://github.com/JacobRintjema/social-app/blob/master/demo1.mp4)
 
 Created based off of the Udemy Mean Stack Course by [Maximilian Schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/)
 
