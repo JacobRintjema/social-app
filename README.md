@@ -1,6 +1,6 @@
-# social-app
+# mySocial
 
-Social Media webapp with user posting, authentication, image sharing, etc. (In Progress)
+Social Media webapp with user posting, authentication, image sharing, account administration. (In Progress)
 
 Mean Stack: NodeJS + Express + MongoDB + Angular Application
 

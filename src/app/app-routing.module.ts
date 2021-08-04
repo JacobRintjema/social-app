@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
   // { path: 'auth/login', component: LoginComponent },
   // { path: 'auth/signup', component: SignupComponent },
-  { path: 'auth/user/:userId', component: UserComponent }
+  { path: 'auth/user/:userId', component: UserComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
